@@ -17,10 +17,9 @@ Map<String, dynamic> _$$_InitialToJson(_$_Initial instance) =>
 
 _$_FeedFetched _$$_FeedFetchedFromJson(Map<String, dynamic> json) =>
     _$_FeedFetched(
-      chestExercises: json['chestExercises'] == null
-          ? null
-          : ChestExercises.fromJson(
-              json['chestExercises'] as Map<String, dynamic>),
+      chestExercises: (json['chestExercises'] as List<dynamic>?)
+          ?.map((e) => ChestExercises.fromJson(e as Map<String, dynamic>))
+          .toList(),
       $type: json['runtimeType'] as String?,
     );
 

@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             SizedBox(
-                height: 300,
+                height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: WorkoutName())
           ],
