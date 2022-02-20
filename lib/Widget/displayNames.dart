@@ -21,14 +21,16 @@ class WorkoutName extends StatelessWidget {
           )
           ..maybeWhen(
               feedFetched: (chestExercises) {
-                _chestExercises.add(chestExercises ??
-                    ChestExercises(
-                        name: "abc",
-                        bodyPart: "abc",
-                        id: "abc",
-                        gifUrl: "abc",
-                        target: "abc",
-                        equipment: "abc"));
+                _chestExercises.addAll(chestExercises ??
+                    [
+                      ChestExercises(
+                          name: "abc",
+                          bodyPart: "abc",
+                          id: "abc",
+                          gifUrl: "abc",
+                          target: "abc",
+                          equipment: "abc")
+                    ]);
               },
               orElse: () {});
         return _chestExercises.isEmpty
@@ -38,7 +40,13 @@ class WorkoutName extends StatelessWidget {
             : ListView.builder(
                 itemCount: _chestExercises.length,
                 itemBuilder: (context, index) {
-                  return Text(_chestExercises[index].name!);
+                  return Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      _chestExercises[index].name!,
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  );
                 });
       },
     );

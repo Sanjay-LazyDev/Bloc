@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:muscel_workout/BLoC/chestExercise.dart';
@@ -10,13 +9,14 @@ part 'feedCubit.freezed.dart';
 part 'feedCubit.g.dart';
 part 'feedState.dart';
 
-class FeedCubit extends Cubit<FeedState> with HydratedMixin {
+class FeedCubit extends Cubit<FeedState> {
   FeedCubit() : super(const FeedState.initial());
   final feedRepository = FeedRepository();
 
   Future fetchChestExercises() async {
     try {
-      List<ChestExercises> chestExercisesFetched = await feedRepository.getChestExercises();
+      List<ChestExercises> chestExercisesFetched =
+          await feedRepository.getChestExercises();
       state.maybeWhen(orElse: () {
         emit(FeedState.feedFetched(
           chestExercises: chestExercisesFetched,

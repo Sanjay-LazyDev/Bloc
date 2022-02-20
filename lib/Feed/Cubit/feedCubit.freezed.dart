@@ -39,7 +39,7 @@ class _$FeedStateTearOff {
     return const _Initial();
   }
 
-  _FeedFetched feedFetched({required ChestExercises? chestExercises}) {
+  _FeedFetched feedFetched({required List<ChestExercises>? chestExercises}) {
     return _FeedFetched(
       chestExercises: chestExercises,
     );
@@ -66,7 +66,7 @@ mixin _$FeedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ChestExercises? chestExercises) feedFetched,
+    required TResult Function(List<ChestExercises>? chestExercises) feedFetched,
     required TResult Function() feedConnectionTimeOut,
     required TResult Function() feedNoInternet,
   }) =>
@@ -74,7 +74,7 @@ mixin _$FeedState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
   }) =>
@@ -82,7 +82,7 @@ mixin _$FeedState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
     required TResult orElse(),
@@ -177,7 +177,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ChestExercises? chestExercises) feedFetched,
+    required TResult Function(List<ChestExercises>? chestExercises) feedFetched,
     required TResult Function() feedConnectionTimeOut,
     required TResult Function() feedNoInternet,
   }) {
@@ -188,7 +188,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
   }) {
@@ -199,7 +199,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
     required TResult orElse(),
@@ -265,9 +265,7 @@ abstract class _$FeedFetchedCopyWith<$Res> {
   factory _$FeedFetchedCopyWith(
           _FeedFetched value, $Res Function(_FeedFetched) then) =
       __$FeedFetchedCopyWithImpl<$Res>;
-  $Res call({ChestExercises? chestExercises});
-
-  $ChestExercisesCopyWith<$Res>? get chestExercises;
+  $Res call({List<ChestExercises>? chestExercises});
 }
 
 /// @nodoc
@@ -288,19 +286,8 @@ class __$FeedFetchedCopyWithImpl<$Res> extends _$FeedStateCopyWithImpl<$Res>
       chestExercises: chestExercises == freezed
           ? _value.chestExercises
           : chestExercises // ignore: cast_nullable_to_non_nullable
-              as ChestExercises?,
+              as List<ChestExercises>?,
     ));
-  }
-
-  @override
-  $ChestExercisesCopyWith<$Res>? get chestExercises {
-    if (_value.chestExercises == null) {
-      return null;
-    }
-
-    return $ChestExercisesCopyWith<$Res>(_value.chestExercises!, (value) {
-      return _then(_value.copyWith(chestExercises: value));
-    });
   }
 }
 
@@ -314,7 +301,7 @@ class _$_FeedFetched implements _FeedFetched {
       _$$_FeedFetchedFromJson(json);
 
   @override
-  final ChestExercises? chestExercises;
+  final List<ChestExercises>? chestExercises;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -346,7 +333,7 @@ class _$_FeedFetched implements _FeedFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ChestExercises? chestExercises) feedFetched,
+    required TResult Function(List<ChestExercises>? chestExercises) feedFetched,
     required TResult Function() feedConnectionTimeOut,
     required TResult Function() feedNoInternet,
   }) {
@@ -357,7 +344,7 @@ class _$_FeedFetched implements _FeedFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
   }) {
@@ -368,7 +355,7 @@ class _$_FeedFetched implements _FeedFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
     required TResult orElse(),
@@ -424,13 +411,13 @@ class _$_FeedFetched implements _FeedFetched {
 }
 
 abstract class _FeedFetched implements FeedState {
-  const factory _FeedFetched({required ChestExercises? chestExercises}) =
+  const factory _FeedFetched({required List<ChestExercises>? chestExercises}) =
       _$_FeedFetched;
 
   factory _FeedFetched.fromJson(Map<String, dynamic> json) =
       _$_FeedFetched.fromJson;
 
-  ChestExercises? get chestExercises;
+  List<ChestExercises>? get chestExercises;
   @JsonKey(ignore: true)
   _$FeedFetchedCopyWith<_FeedFetched> get copyWith =>
       throw _privateConstructorUsedError;
@@ -485,7 +472,7 @@ class _$_FeedConnectionTimeOut implements _FeedConnectionTimeOut {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ChestExercises? chestExercises) feedFetched,
+    required TResult Function(List<ChestExercises>? chestExercises) feedFetched,
     required TResult Function() feedConnectionTimeOut,
     required TResult Function() feedNoInternet,
   }) {
@@ -496,7 +483,7 @@ class _$_FeedConnectionTimeOut implements _FeedConnectionTimeOut {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
   }) {
@@ -507,7 +494,7 @@ class _$_FeedConnectionTimeOut implements _FeedConnectionTimeOut {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
     required TResult orElse(),
@@ -616,7 +603,7 @@ class _$_FeedNoInternet implements _FeedNoInternet {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ChestExercises? chestExercises) feedFetched,
+    required TResult Function(List<ChestExercises>? chestExercises) feedFetched,
     required TResult Function() feedConnectionTimeOut,
     required TResult Function() feedNoInternet,
   }) {
@@ -627,7 +614,7 @@ class _$_FeedNoInternet implements _FeedNoInternet {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
   }) {
@@ -638,7 +625,7 @@ class _$_FeedNoInternet implements _FeedNoInternet {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ChestExercises? chestExercises)? feedFetched,
+    TResult Function(List<ChestExercises>? chestExercises)? feedFetched,
     TResult Function()? feedConnectionTimeOut,
     TResult Function()? feedNoInternet,
     required TResult orElse(),
